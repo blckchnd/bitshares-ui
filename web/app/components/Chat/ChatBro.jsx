@@ -15,6 +15,7 @@ class ChatBro extends React.Component {
         return <iframe 
 	        		style={{height: frameHeight,  width: "100%"}} 
 	        		src={`https://www.chatbro.com/ru/${this.props.chatId}`}
+	        		sandbox="allow-same-origin allow-forms allow-scripts"
         		>
         		</iframe>;
     }

@@ -87,7 +87,7 @@ class ExchangeContainer extends React.Component {
                             return GatewayStore.getState().bridgeCoins;
                         },
                         miniDepthChart: () => {
-                            return SettingsStore.getState().viewSettings.get("miniDepthChart", true);
+                            return SettingsStore.getState().viewSettings.get("miniDepthChart", false);
                         },
                         viewChat: () => {
                             return SettingsStore.getState().viewSettings.get("viewChat", true);
