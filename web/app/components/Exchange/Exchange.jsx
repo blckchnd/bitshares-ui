@@ -28,6 +28,8 @@ import ExchangeHeader from "./ExchangeHeader";
 import Translate from "react-translate-component";
 import { Apis } from "bitsharesjs-ws";
 import GatewayActions from "actions/GatewayActions";
+import ChatBro from "../Chat/ChatBro"
+
 
 Highcharts.setOptions({
     global: {
@@ -40,7 +42,6 @@ class Exchange extends React.Component {
         super();
 
         this.state = this._initialState(props);
-
         this._getWindowSize = debounce(this._getWindowSize.bind(this), 150);
     }
 
@@ -832,6 +833,12 @@ class Exchange extends React.Component {
         });
     }
 
+    _toggleChat() {
+        SettingsActions.changeViewSetting({
+            viewChat: !this.props.viewChat
+        });
+    }
+
     render() {
         let { currentAccount, marketLimitOrders, marketCallOrders, marketData, activeMarketHistory,
             invertedCalls, starredMarkets, quoteAsset, baseAsset, lowestCallPrice,
@@ -1251,9 +1258,11 @@ class Exchange extends React.Component {
 
                     </div>{/* End of Main Content Column */}
 
+                    
                     {/* Right Column - Market History */}
-                    <div className="grid-block shrink right-column no-overflow vertical show-for-medium" style={{paddingTop: 0, minWidth: 358, maxWidth: 400}}>
+                    <div className="grid-block shrink right-column no-overflow vertical show-for-medium" style={{paddingTop: 0, minWidth: 358}}>
                         {/* Market History */}
+
                         <div className="grid-block no-padding no-margin vertical" >
                             <MyMarkets
                                 className="left-order-book no-padding no-overflow"
@@ -1278,34 +1287,42 @@ class Exchange extends React.Component {
                                 current={`${quoteSymbol}_${baseSymbol}`}
                             />
                         </div>
-                        <div style={{padding: !this.props.miniDepthChart ? 0 : "0 0 40px 0"}} className="grid-block no-margin vertical shrink">
-                            <div onClick={this._toggleMiniChart.bind(this)} className="exchange-content-header clickable" style={{textAlign: "left", paddingRight: 10}}>{this.props.miniDepthChart ? <span>&#9660;</span> : <span>&#9650;</span>}</div>
-                            {this.props.miniDepthChart ? <DepthHighChart
-                                    marketReady={marketReady}
-                                    orders={marketLimitOrders}
-                                    showCallLimit={showCallLimit}
-                                    call_orders={marketCallOrders}
-                                    flat_asks={flatAsks}
-                                    flat_bids={flatBids}
-                                    flat_calls={ showCallLimit ? flatCalls : []}
-                                    flat_settles={this.props.settings.get("showSettles") && flatSettles}
-                                    settles={marketSettleOrders}
-                                    invertedCalls={invertedCalls}
-                                    totalBids={totals.bid}
-                                    totalAsks={totals.ask}
-                                    base={base}
-                                    quote={quote}
-                                    height={200}
-                                    onClick={this._depthChartClick.bind(this, base, quote)}
-                                    settlementPrice={(!hasPrediction && feedPrice) && feedPrice.toReal()}
-                                    spread={spread}
-                                    LCP={showCallLimit ? lowestCallPrice : null}
-                                    leftOrderBook={leftOrderBook}
-                                    hasPrediction={hasPrediction}
-                                    noText={true}
-                                    theme={this.props.settings.get("themes")}
-                                /> : null}
-                        </div>
+                        <div onClick={this._toggleChat.bind(this)} className="exchange-content-header clickable" style={{textAlign: "left", paddingRight: 10}}>{this.props.viewChat ? <span>&#9660;</span> : <span>&#9650;</span>}</div>
+                        {/* TODO chatId need store in config or admin settings */}
+                        {this.props.viewChat ? 
+                         <ChatBro 
+                            height={"30%"}
+                            chatId={"49Vq"} 
+                         />
+                        : null}
+                        <div style={{height: "30%",  width: "100%"}} onClick={this._toggleMiniChart.bind(this)} className="exchange-content-header clickable" style={{textAlign: "left", paddingRight: 10}}>{this.props.miniDepthChart ? <span>&#9660;</span> : <span>&#9650;</span>}</div>
+                            {this.props.miniDepthChart ? 
+                                <DepthHighChart
+                                        marketReady={marketReady}
+                                        orders={marketLimitOrders}
+                                        showCallLimit={showCallLimit}
+                                        call_orders={marketCallOrders}
+                                        flat_asks={flatAsks}
+                                        flat_bids={flatBids}
+                                        flat_calls={ showCallLimit ? flatCalls : []}
+                                        flat_settles={this.props.settings.get("showSettles") && flatSettles}
+                                        settles={marketSettleOrders}
+                                        invertedCalls={invertedCalls}
+                                        totalBids={totals.bid}
+                                        totalAsks={totals.ask}
+                                        base={base}
+                                        quote={quote}
+                                        height={200}
+                                        onClick={this._depthChartClick.bind(this, base, quote)}
+                                        settlementPrice={(!hasPrediction && feedPrice) && feedPrice.toReal()}
+                                        spread={spread}
+                                        LCP={showCallLimit ? lowestCallPrice : null}
+                                        leftOrderBook={leftOrderBook}
+                                        hasPrediction={hasPrediction}
+                                        noText={true}
+                                        theme={this.props.settings.get("themes")}
+                                    />
+                            : null }
                     </div>
 
                     {!isNullAccount && quoteIsBitAsset  ?
@@ -1322,7 +1339,7 @@ class Exchange extends React.Component {
                             backing_asset={baseAsset.getIn(["bitasset", "options", "short_backing_asset"])}
                             account={currentAccount}
                         /> : null}
-                {/* End of Second Vertical Block */}
+                    {/* End of Second Vertical Block */}
                 </div>
         );
     }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width"/>
     <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.cloudflare.com https://*.google-analytics.com https://bitshares.openledger.info; style-src 'self' 'unsafe-inline'; connect-src 'self' *; font-src 'self' data: https://www.chatbro.com; img-src 'self' data: https://www.transwiser.com https://www.chatbro.com https://api.telegram.org https://*.google-analytics.com; child-src 'self' https://www.123contactform.com https://bitkapital.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.cloudflare.com https://bitshares.openledger.info; style-src 'self' 'unsafe-inline'; connect-src 'self' *; font-src 'self' data:; img-src 'self' data: https://www.transwiser.com; child-src 'self' https://www.123contactform.com https://bitkapital.com; frame-src https://www.chatbro.com">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>-->
     <title>RuDEX Market</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=4">
@@ -22,10 +22,12 @@
         }
     </style>
     <script id="chatBroEmbedCode">
-        /* Chatbro Widget Embed Code Start */
+    
+        /* Chatbro Widget Embed Code Start 
         function ChatbroLoader(chats,async) {async=async!==false;var params={embedChatsParameters:chats instanceof Array?chats:[chats],needLoadCode:typeof Chatbro==='undefined'};var xhr=new XMLHttpRequest();xhr.withCredentials = true;xhr.onload=function(){eval(xhr.responseText)};xhr.onerror=function(){console.error('Chatbro loading error')};xhr.open('POST','//www.chatbro.com/embed_chats/',async);xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');xhr.send('parameters='+encodeURIComponent(JSON.stringify(params)))}
-        /* Chatbro Widget Embed Code End */
+        /* Chatbro Widget Embed Code End 
         ChatbroLoader({encodedChatId: '49Vq'});
+*/
     </script>
 </head>
 <body>
