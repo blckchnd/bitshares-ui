@@ -488,7 +488,7 @@ class OrderBook extends React.Component {
                                         <table style={{position: "relative", bottom: 0}} className="table order-table table-hover text-right">
                                             <TransitionWrapper
                                                 ref="askTransition"
-                                                className="ps-container"
+                                                className="ps-container clickable"
                                                 component="tbody"
                                                 transitionName="newrow"
                                             >
@@ -511,7 +511,7 @@ class OrderBook extends React.Component {
                                     <table className="table order-table table-hover text-right">
                                         <TransitionWrapper
                                             ref="bidTransition"
-                                            className="ps-container"
+                                            className="ps-container clickable"
                                             component="tbody"
                                             transitionName="newrow"
                                         >
