@@ -27,6 +27,14 @@ require("file-loader?name=asset-symbols/[name].png!./rudex.steem.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.tt.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.krm.png");
 
+// xbts assets
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.sth.png");
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.post.png");
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.doge.png");
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.btc.png");
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.ltc.png");
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.dash.png");
+
 // 3rd party assets
 require("file-loader?name=asset-symbols/[name].png!./obits.png");
 require("file-loader?name=asset-symbols/[name].png!./btwty.png");

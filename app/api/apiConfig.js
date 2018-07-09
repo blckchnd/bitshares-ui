@@ -64,6 +64,11 @@ export const gdexAPIs = {
     WITHDRAW_RULE: "/gateway/withdraw/rule"
 };
 
+export const xbtsxAPIs = {
+    BASE: "https://apis.xbts.io/api/v1",
+    COINS_LIST: "/coin"
+};
+
 export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: [
@@ -94,6 +99,7 @@ export const settingsAPIs = {
         {url: "wss://la.dexnode.net/ws", location: "LA, USA"},
         {url: "wss://kc-us-dex.xeldal.com/ws", location: "Kansas City, USA"},
         {url: "wss://btsza.co.za:8091/ws", location: "Cape Town, South Africa"},
+        {url: "wss://node.xbts.io/ws", location: "Falkenstein, Germany"},
         {
             url: "wss://eu.nodes.bitshares.ws",
             location: "Central Europe - BitShares Infrastructure Program"

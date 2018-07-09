@@ -243,7 +243,8 @@ class SettingsStore {
                     "BTWTY",
                     "ZEPH",
                     "ESCROW.RUBLE",
-                    "BTC"
+                    "BTC",
+                    "XBTSX.STH"
                 ],
                 markets_39f5e2ed: [
                     // TESTNET

@@ -437,7 +437,8 @@ var Utils = {
             "RUDEX.",
             "ESCROW.",
             "GDEX.",
-            "WIN."
+            "WIN.",
+            "XBTSX."
         ];
         let suffix = "";
         let i;
