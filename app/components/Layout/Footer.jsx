@@ -21,6 +21,7 @@ import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 import {ChainStore} from "bitsharesjs";
 import ifvisible from "ifvisible";
 import {getWalletName} from "branding";
+import {Link} from "react-router-dom";
 
 class Footer extends React.Component {
     static propTypes = {
@@ -473,6 +474,47 @@ class Footer extends React.Component {
                                     />
                                 )}
                             </div>
+                            <Link
+                                style={{
+                                    flexFlow: "row",
+                                    padding: "0 0.5rem",
+                                    borderRight:
+                                        "1px solid rgba(128, 128, 128, 0.45)",
+                                    lineHeight: "2rem",
+                                    fontSize: "1em"
+                                }}
+                                to={"/listing"}
+                            >
+                                TOKEN LISTING
+                            </Link>
+                            <a
+                                style={{
+                                    padding: "0 0.5rem",
+                                    borderRight:
+                                        "1px solid rgba(128, 128, 128, 0.45)",
+                                    lineHeight: "2rem",
+                                    fontSize: "1em"
+                                }}
+                                href="https://rudex.freshdesk.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                SUPPORT
+                            </a>
+                            <a
+                                style={{
+                                    padding: "0 0.5rem",
+                                    borderRight:
+                                        "1px solid rgba(128, 128, 128, 0.45)",
+                                    lineHeight: "2rem",
+                                    fontSize: "1em"
+                                }}
+                                href="https://steemit.com/@rudex"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                NEWS
+                            </a>
                         </div>
                         {!!routerTransitioner &&
                             routerTransitioner.isBackgroundPingingInProgress() && (

@@ -1,0 +1,186 @@
+.listingTable {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-spacing: 0;
+    font-size: 1rem;
+}
+
+.listingTable__header,
+.listingTable__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.listingTable__header {
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.listingTable__row {
+    border-bottom: 1px dotted #e3e3e3;
+}
+
+.listingTable__cell {
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.listingAsset {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.listingAssetCard {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.listingTableRank {
+    width: 10%;
+}
+
+.listingTableLogo {
+    width: 15%;
+}
+
+.listingTableAssetName {
+    width: 75%;
+}
+
+.listingAssetInfo {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+}
+
+.listingAssetInfoData {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.listingTableVotes {
+    width: calc(100% / 3);
+}
+
+.listingTableGoal {
+    width: calc(100% / 3);
+}
+
+.listingTableStatus {
+    width: calc(100% / 3);
+}
+
+.listingTableProgress {
+    width: 25%;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.nowrap {
+    white-space: normal;
+}
+
+.listingAssetInfoBlock {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .nowrap {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .listingTable__cell {
+        padding: 0.5rem 0;
+    }
+
+    .listingTable__header {
+        display: none;
+    }
+
+    .listingAssetCard {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .listingAsset {
+        flex-direction: column;
+    }
+
+    .listingTableRank {
+        align-self: center;
+    }
+
+    .listingTableLogo {
+        width: 15%;
+    }
+
+    .listingTableAssetName {
+        width: 75%;
+        align-self: center;
+        padding: 0 0 0.5rem 1rem;
+    }
+
+    .listingAssetInfo {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+        justify-content: flex-end;
+    }
+
+    .listingAssetInfoData {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        order: 2;
+    }
+
+    .listingTableVotes {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 0 0 0.5rem 1rem;
+    }
+
+    .listingTableGoal {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 0 0 0.5rem 1rem;
+    }
+
+    .listingTableStatus {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 0 0 0.5rem 1rem;
+    }
+
+    .listingTableProgress {
+        width: 15%;
+        align-self: center;
+        order: 1;
+    }
+
+    .listingAssetInfoBlock {
+        display: block;
+    }
+}

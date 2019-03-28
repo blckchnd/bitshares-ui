@@ -229,3 +229,97 @@ export function getAllowedLogins() {
     // possible: list containing any combination of ["password", "wallet"]
     return ["password", "wallet"];
 }
+
+/**
+ * These is the default goal that are using in Listing page
+ *
+ * @returns {number}
+ */
+export function getListingGoal() {
+    return 300;
+}
+
+/**
+ * The featured coins displayed on the Listing page of the UI
+ *
+ * @returns {[{[string]:[string]}]}
+ */
+export function getListingCoins() {
+    return [
+        {
+            name: "Dash",
+            ticker: "DASH",
+            account: "rudex-dash"
+        },
+        {
+            name: "Zcash",
+            ticker: "ZEC",
+            account: "rudex-zerocash"
+        },
+        {
+            name: "Tether",
+            ticker: "USDT",
+            account: "rudex-usdt"
+        },
+        {
+            name: "Grin",
+            ticker: "GRIN",
+            account: "rudex-grin"
+        },
+        {
+            name: "SIBCoin",
+            ticker: "SIB",
+            account: "rudex-sibcoin"
+        },
+        {
+            name: "Waves",
+            ticker: "WAVES",
+            account: "rudex-waves"
+        },
+        {
+            name: "NEM",
+            ticker: "XEM",
+            account: "rudex-nem"
+        },
+        {
+            name: "Emercoin",
+            ticker: "EMC",
+            account: "rudex-emercoin"
+        },
+        {
+            name: "Decred",
+            ticker: "DCR",
+            account: "rudex-decred"
+        },
+        {
+            name: "Everipedia",
+            ticker: "IQ",
+            account: "rudex-iq"
+        },
+        {
+            name: "MEET.ONE",
+            ticker: "MEETONE",
+            account: "rudex-meetone"
+        },
+        {
+            name: "Monero",
+            ticker: "XMR",
+            account: "rudex-monero"
+        },
+        {
+            name: "DigiByte",
+            ticker: "DGB",
+            account: "rudex-digibyte"
+        },
+        {
+            name: "Peercoin",
+            ticker: "PPC",
+            account: "rudex-peercoin"
+        },
+        {
+            name: "DECENT",
+            ticker: "DCT",
+            account: "rudex-decent"
+        }
+    ];
+}

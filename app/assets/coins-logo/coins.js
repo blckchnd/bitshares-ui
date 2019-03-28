@@ -1,0 +1,16 @@
+require("file-loader?name=coins-logo/[name].png!./DASH.png");
+require("file-loader?name=coins-logo/[name].png!./DCR.png");
+require("file-loader?name=coins-logo/[name].png!./DCT.png");
+require("file-loader?name=coins-logo/[name].png!./DGB.png");
+require("file-loader?name=coins-logo/[name].png!./EMC.png");
+require("file-loader?name=coins-logo/[name].png!./GRIN.png");
+require("file-loader?name=coins-logo/[name].png!./IQ.png");
+require("file-loader?name=coins-logo/[name].png!./MEETONE.png");
+require("file-loader?name=coins-logo/[name].png!./NoLogo.png");
+require("file-loader?name=coins-logo/[name].png!./PPC.png");
+require("file-loader?name=coins-logo/[name].png!./SIB.png");
+require("file-loader?name=coins-logo/[name].png!./USDT.png");
+require("file-loader?name=coins-logo/[name].png!./WAVES.png");
+require("file-loader?name=coins-logo/[name].png!./XEM.png");
+require("file-loader?name=coins-logo/[name].png!./XMR.png");
+require("file-loader?name=coins-logo/[name].png!./ZEC.png");

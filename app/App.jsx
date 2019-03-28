@@ -121,6 +121,12 @@ const CreateWorker = Loadable({
     loading: LoadingIndicator
 });
 
+const Listing = Loadable({
+    loader: () =>
+        import(/* webpackChunkName: "listing" */ "./components/Listing/ListingPage"),
+    loading: LoadingIndicator
+});
+
 import LoginSelector from "./components/LoginSelector";
 import {CreateWalletFromBrainkey} from "./components/Wallet/WalletCreate";
 
@@ -375,6 +381,11 @@ class App extends React.Component {
                                     component={LoginSelector}
                                 />
                                 <Route path="/news" exact component={News} />
+                                <Route
+                                    path="/listing"
+                                    exact
+                                    component={Listing}
+                                />
 
                                 {/* Explorer routes */}
                                 <Route

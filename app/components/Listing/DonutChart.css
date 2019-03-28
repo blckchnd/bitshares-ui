@@ -1,0 +1,29 @@
+.root {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    border-radius: 50%;
+}
+
+.inside {
+    position: absolute;
+    top: calc(calc(100% - 30px) / 2);
+    left: calc(calc(100% - 30px) / 2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percent {
+    font-size: 12px;
+}
